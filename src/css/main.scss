@@ -2,7 +2,7 @@
 @import "fonts";
 
 // Uncomment for embeds
-//@import "embed";
+@import "embed";
 
 // Uncomment for full screen (including immersive article main media)
 //@import "fullscreen";
@@ -11,3 +11,65 @@
 .interactive-atom {
     margin: 0 !important;
 }
+
+.gv-elex-heading {
+    margin-top: 1px !important;
+}
+
+.gv-elex-bar {
+    height: 18px;
+}
+
+table {
+    width: 100%;
+}
+
+tr {
+    padding-top: 15px;
+    border: 1px solid black;
+}
+
+td {
+    @include fs-textSans(2);
+    vertical-align: top;
+    padding-right: 1px;
+}
+
+th {
+    @include fs-textSans(1);
+    color: #666;
+}
+
+.gv-elex-candidate {
+    padding-right: 20px;
+}
+
+.gv-elex-result {
+    padding-bottom: 5px;
+    vertical-align: top;
+}
+
+.gv-elex-party {
+    font-weight: 700;
+    color: #333;
+    padding-right: 3px;
+}
+
+.gv-elex-candidatename {
+    color: #555;
+    padding-right: 3px;
+}
+
+.gv-elex-rule {
+    margin-top: 2px;
+    height: 1px;
+    background-color: #ccc;
+    width: 100%;
+}
+
+.gv-elex-votes, .gv-elex-change {
+    text-align: right;
+    @include fs-textSans(1);
+}
+
+

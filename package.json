@@ -48,6 +48,7 @@
     "vinyl-source-stream": "^1.1.0"
   },
   "dependencies": {
+    "iframe-messenger": "^0.2.2",
     "mustache": "^2.3.0",
     "xr": "^0.2.0"
   }
