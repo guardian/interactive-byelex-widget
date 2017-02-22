@@ -2,6 +2,7 @@ import xr from 'xr'
 import config from './../../config.json'
 import Mustache from 'mustache'
 import charttemplate from './../templates/chart.html'
+import footertemplate from './../templates/footer.html'
 
 
 function cleannumber(input) {
@@ -31,18 +32,17 @@ function ordercandidates(candidates) {
 
 xr.get(config.docData).then((resp) => {
     var sheets = resp.data.sheets;
-    var candidates = ordercandidates(sheets.generalresults);
-    //   var candidates = sheets.generalresults;
-
-    console.log(candidates);
+    var candidates = ordercandidates(sheets.results);
 
     // render just the html for the blocks
     var charthtml = Mustache.render(charttemplate, candidates);
 
-
+    var footerhtml = Mustache.render(footertemplate,sheets.furniture[0])
 
     // inject that rendered html into the empty div we declared in main.html
-    document.querySelector(".gv-elex-heading").innerHTML = sheets.totals[0].heading;
+    document.querySelector(".gv-elex-heading").innerHTML = sheets.furniture[0].heading;
+    document.querySelector(".gv-elex-subhead").innerHTML = sheets.furniture[0].subheading;
+    document.querySelector(".gv-elex-footer").innerHTML = footerhtml;
     document.querySelector(".gv-elex-results").innerHTML = charthtml;
     window.resize();
 });

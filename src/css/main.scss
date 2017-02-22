@@ -13,7 +13,20 @@
 }
 
 .gv-elex-heading {
-    margin-top: 1px !important;
+    margin: 0 !important;
+}
+
+.gv-elex-subhead {
+    margin: 0 !important;
+    @include fs-bodyHeading(1);
+    color: #555;
+}
+
+.gv-elex-footer {
+    @include fs-textSans(1);
+    margin: 0 !important;
+      color: #555;
+ 
 }
 
 .gv-elex-bar {
@@ -33,6 +46,7 @@ td {
     @include fs-textSans(2);
     vertical-align: top;
     padding-right: 1px;
+    border-top: 1px solid #ccc;
 }
 
 th {
@@ -61,10 +75,7 @@ th {
 }
 
 .gv-elex-rule {
-    margin-top: 2px;
-    height: 1px;
-    background-color: #ccc;
-    width: 100%;
+    display: none;
 }
 
 .gv-elex-votes, .gv-elex-change {
