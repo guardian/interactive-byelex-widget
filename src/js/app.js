@@ -4,6 +4,12 @@ import Mustache from 'mustache'
 import charttemplate from './../templates/chart.html'
 import footertemplate from './../templates/footer.html'
 
+function isliveblog() {
+    var url = window.top.location.pathname;
+    if (url.search('/live/') > 0 || url.search('liveblog') > 0){ 
+        return true;
+    } else {return false} ;
+}
 
 function cleannumber(input) {
     input = input.replace(/,/g, "");
@@ -44,5 +50,10 @@ xr.get(config.docData).then((resp) => {
     document.querySelector(".gv-elex-subhead").innerHTML = sheets.furniture[0].subheading;
     document.querySelector(".gv-elex-footer").innerHTML = footerhtml;
     document.querySelector(".gv-elex-results").innerHTML = charthtml;
+    if (isliveblog() == true ) {
+        document.querySelector(".gv-elex-wrapper").classList.add("liveblog");
+    }
+    
+
     window.resize();
 });
